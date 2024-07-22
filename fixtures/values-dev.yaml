@@ -2,6 +2,11 @@ image:
   repository: ghcr.io/gimlet-io/gimlet
   tag: v0.26.0
 containerPort: 9000
+# secret:
+#   enabled: true
+#schedule: "0 1 0 0 0"
+# command: |
+# echo "hello"
 probe:
   enabled: true
   path: /
@@ -13,6 +18,7 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: traefik
   host: gimlet.pangarabbit.com
+  #tlsEnabled: true
 resources:
   ignoreLimits: true
 volumes:
