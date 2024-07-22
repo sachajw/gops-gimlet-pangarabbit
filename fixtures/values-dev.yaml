@@ -17,6 +17,8 @@ vars:
 ingress:
   ingressClassName: traefik
   host: gimlet.pangarabbit.com
+  paths:
+    - path: /
   #tlsEnabled: true
 resources:
   ignoreLimits: true
