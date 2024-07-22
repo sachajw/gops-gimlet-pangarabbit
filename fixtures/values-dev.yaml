@@ -1,7 +1,11 @@
+#replicas: 3
 image:
   repository: ghcr.io/gimlet-io/gimlet
   tag: v0.26.0
 containerPort: 9000
+
+# imagePullSecrets:
+#   - regcred
 # secret:
 #   enabled: true
 #schedule: "0 1 0 0 0"
@@ -14,18 +18,13 @@ vars:
   HOST: "http://gimlet.pangarabbit.com:9000"
   #HOST: "http://127.0.0.1:9000"
   API_HOST: http://gimlet.default.svc.cluster.local:9000
-  # FEATURE_POSTHOG: false
+# FEATURE_POSTHOG: false
 ingress:
   ingressClassName: traefik
   host: gimlet.pangarabbit.com
   paths:
-    - path: /login/
+    - path: /
       pathType: Prefix
-      backend:
-        service:
-          name: gimlet
-          port:
-            number: 9000
   #tlsEnabled: true
 resources:
   ignoreLimits: true
