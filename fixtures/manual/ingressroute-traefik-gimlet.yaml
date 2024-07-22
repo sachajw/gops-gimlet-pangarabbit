@@ -11,7 +11,7 @@ spec:
     - kind: Rule
       match: Host(`gimlet.pangarabbit.com`)
       services:
-        - name: argocd-server
+        - name: gimlet
           namespace: gimlet
           port: 9000
   tls:

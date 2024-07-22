@@ -6,7 +6,7 @@ probe:
   enabled: true
   path: /
 vars:
-  HOST: "http://gimlet.pangarabbit.com:9000"
+  HOST: "http://gimlet.pangarabbit.com"
   API_HOST: http://gimlet.default.svc.cluster.local:9000
   # FEATURE_POSTHOG: false
 resources:
