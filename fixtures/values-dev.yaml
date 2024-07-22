@@ -11,14 +11,15 @@ probe:
   enabled: true
   path: /
 vars:
-  HOST: "http://gimlet.pangarabbit.com:9000"
+  #HOST: "http://gimlet.pangarabbit.com:9000"
+  HOST: "http://127.0.0.1:9000"
   API_HOST: http://gimlet.default.svc.cluster.local:9000
   # FEATURE_POSTHOG: false
 ingress:
   ingressClassName: traefik
   host: gimlet.pangarabbit.com
   paths:
-    - path: /
+    - path: /login/
   #tlsEnabled: true
 resources:
   ignoreLimits: true
