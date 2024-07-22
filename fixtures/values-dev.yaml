@@ -11,9 +11,11 @@ probe:
   enabled: true
   path: /
 vars:
-  HOST: "http://gimlet.pangarabbit.com"
+  HOST: "http://gimlet.pangarabbit.com:9000"
   API_HOST: http://gimlet.default.svc.cluster.local:9000
   # FEATURE_POSTHOG: false
+spec:
+  ingressClassName: traefik
 ingress:
   annotations:
     kubernetes.io/ingress.class: traefik
