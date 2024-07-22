@@ -9,6 +9,10 @@ vars:
   HOST: "http://gimlet.pangarabbit.com"
   API_HOST: http://gimlet.default.svc.cluster.local:9000
   # FEATURE_POSTHOG: false
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  host: gimlet.pangarabbit.com
 resources:
   ignoreLimits: true
 volumes:
