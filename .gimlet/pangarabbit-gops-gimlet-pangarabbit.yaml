@@ -29,5 +29,15 @@ manifests: |
           - name: gimlet
             namespace: gimlet
             port: 10081
-    tls:
-      certResolver: default
+      tls:
+        certResolver: default
+    ---
+    apiVersion: traefik.io/v1alpha1
+    kind: Middleware
+    metadata:
+      name: gimlet-redirectregex
+      namespace: gimlet
+    spec:
+      redirectRegex:
+        regex: ^http://localhost/(.*)
+        replacement: http://gimlet.pangarabbit.com/${1}
