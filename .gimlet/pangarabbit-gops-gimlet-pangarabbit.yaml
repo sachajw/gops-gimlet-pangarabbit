@@ -31,3 +31,14 @@ manifests: |
             port: 80
     tls:
       certResolver: default
+    ---
+    # Redirect with domain replacement
+    apiVersion: traefik.io/v1alpha1
+    kind: Middleware
+    metadata:
+      name: gimlet-redirectregex
+      namespace: default
+    spec:
+      redirectRegex:
+        regex: ^http://localhost/(.*)
+        replacement: http://gimlet.pangarabbit.com/${1}
