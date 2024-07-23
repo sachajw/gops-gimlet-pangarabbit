@@ -1,4 +1,4 @@
-app: "{{ printf \"gimlet-dashboard-%s\" .GITHUB_BRANCH | sanitizeDNSName }}"
+app: '{{ printf "gimlet-dashboard-%s" .GITHUB_BRANCH | sanitizeDNSName }}'
 env: preview
 namespace: preview
 chart:
@@ -11,7 +11,7 @@ deploy:
 cleanup:
   branch: "!main"
   event: branchDeleted
-  app: "{{ printf \"gimlet-dashboard-%s\" .BRANCH | sanitizeDNSName }}"
+  app: '{{ printf "gimlet-dashboard-%s" .BRANCH | sanitizeDNSName }}'
 values:
   gitRepository: "gimlet-io/gimlet"
   gitSha: "{{ .GITHUB_SHA }}"
@@ -33,9 +33,9 @@ values:
       emptyDir: true
   ingress:
     annotations:
-      kubernetes.io/ingress.class: nginx
+      kubernetes.io/ingress.class: traefik
       cert-manager.io/cluster-issuer: letsencrypt
-    host: "{{ trunc 40 (printf \"gimlet-dashboard-%s\" .GITHUB_BRANCH) | sanitizeDNSName }}.preview.turbopizza.net"
+    host: '{{ trunc 40 (printf "gimlet-dashboard-%s" .GITHUB_BRANCH) | sanitizeDNSName }}.preview.turbopizza.net'
     tlsEnabled: true
   resources:
     requests:
