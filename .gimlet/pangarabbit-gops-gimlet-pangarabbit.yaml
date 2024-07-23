@@ -40,4 +40,4 @@ manifests: |
   spec:
     redirectRegex:
       regex: ^http://localhost/(.*)
-      replacement: http://gimlet.pangarabbit.com/${1}
+      replacement: https://gimlet.pangarabbit.com/${1}
