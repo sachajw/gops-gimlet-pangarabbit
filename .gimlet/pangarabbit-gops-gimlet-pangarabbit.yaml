@@ -28,6 +28,6 @@ manifests: |
         services:
           - name: gimlet
             namespace: gimlet
-            port: 9000
+            port: 80
     tls:
       certResolver: default
