@@ -1,0 +1,13 @@
+app: gops-gimlet-pangarabbit
+env: pangarabbit
+namespace: gimlet
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/static-site/
+values:
+  gitRepository: sachajw/gops-gimlet-pangarabbit
+  gitSha: '{{ .SHA }}'
+  ingress:
+    host: gimlet.pangarabbit.com
+    tlsEnabled: true
+  resources:
+    ignoreLimits: true
