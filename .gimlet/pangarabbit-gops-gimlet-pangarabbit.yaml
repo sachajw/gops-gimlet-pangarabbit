@@ -36,7 +36,7 @@ manifests: |
     kind: Middleware
     metadata:
       name: gimlet-redirectregex
-      namespace: default
+      namespace: gimlet
     spec:
       redirectRegex:
         regex: ^http://localhost/(.*)
